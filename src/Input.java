@@ -1,11 +1,11 @@
 public class Input {
 
     public static String getUserInput(){
-        return None;
+        return null;
     }
 
     public static Boolean validateInput(){
-        return None;
+        return null;
     }
 
 }

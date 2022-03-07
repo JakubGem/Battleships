@@ -7,7 +7,7 @@ public class Game {
     }
 
     public static boolean isGameOver(){
-        return None;
+        return false;
     }
 
 }

@@ -1,7 +1,34 @@
-public class Board {
-    int [][] ocean;
+import java.util.ArrayList;
+import java.util.List;
 
-    private static boolean isPlacementOk(int[][] placement){
-        return None;
+public class Board {
+
+
+    private List<Object> ocean = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Board{" +
+                "ocean=" + ocean +
+                '}';
+    }
+
+    public Board() {
+        for (int j = 0; j < 15; j++) {
+            List<Square> row = new ArrayList<>();
+            for (int i = 0; i < 15; i++) {
+                row.add(new Square(j, i, false, false, false, false, "DUPA"));
+            }
+            ocean.add(row);
+
+        }
+        System.out.println(toString());
+    }
+
+
+    private static boolean isPlacementOk(int[][] placement) {
+        return false;
     }
 }
+
+
