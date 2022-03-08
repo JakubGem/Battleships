@@ -5,8 +5,7 @@ import java.util.List;
 public class Board {
 
 
-    Square square;
-    private List<List<Square>> ocean = new ArrayList<>();
+    public List<List<Square>> ocean = new ArrayList<>();
 
 
 
@@ -18,14 +17,14 @@ public class Board {
             }
             ocean.add(row);
         }
-        for (List<Square> a : ocean){
-            for (Square b : a){
-                System.out.print(b);
-            }
-            System.out.println();
-            System.out.println();
-            System.out.println();
-        }
+//        for (List<Square> a : ocean){
+//            for (Square b : a){
+//                System.out.print(b);
+//            }
+//            System.out.println();
+//            System.out.println();
+//            System.out.println();
+//        }
     }
 
 
