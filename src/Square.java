@@ -1,8 +1,12 @@
 public class Square {
     private int xPos;
     private int yPos;
-    String statusSquare;
-    String objectName;
+    public String statusSquare;
+    public  String objectName;
+
+    public String getStatusSquare() {
+        return statusSquare;
+    }
 
     public Square(int xPos, int yPos, String statusSquare, String objectName) {
         this.xPos = xPos;
@@ -18,5 +22,15 @@ public class Square {
 
     public static boolean getSquareStatus(){
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Square{" +
+                "xPos=" + xPos +
+                ", yPos=" + yPos +
+                ", statusSquare='" + statusSquare + '\'' +
+                ", objectName='" + objectName + '\'' +
+                '}';
     }
 }
