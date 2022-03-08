@@ -34,7 +34,7 @@ public class Display {
             boardString += "\n";
         }
         System.out.println(boardString);
-        BoardFactory.randomPlacement(board);
+//        BoardFactory.randomPlacement(board);
 
     }
 
