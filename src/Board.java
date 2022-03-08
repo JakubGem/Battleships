@@ -1,29 +1,25 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Board {
 
 
-    private List<Object> ocean = new ArrayList<>();
+    private ArrayList<List> ocean = new ArrayList<>();
 
-    @Override
-    public String toString() {
-        return "Board{" +
-                "ocean=" + ocean +
-                '}';
-    }
+
 
     public Board() {
         for (int j = 0; j < 15; j++) {
             List<Square> row = new ArrayList<>();
             for (int i = 0; i < 15; i++) {
-                row.add(new Square(j, i, false, false, false, false, "DUPA"));
+                row.add(new Square(j, i, "hit", "DUPA"));
             }
             ocean.add(row);
-
         }
-        System.out.println(toString());
+        System.out.println(ocean);
     }
+
 
 
     private static boolean isPlacementOk(int[][] placement) {
