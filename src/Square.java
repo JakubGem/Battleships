@@ -1,6 +1,11 @@
 public class Square {
     private int xPos;
     private int yPos;
+
+    public void setStatusSquare(String statusSquare) {
+        this.statusSquare = statusSquare;
+    }
+
     public String statusSquare;
     public  String objectName;
 
@@ -20,9 +25,7 @@ public class Square {
         return null;
     }
 
-    public static boolean getSquareStatus(){
-        return false;
-    }
+
 
     @Override
     public String toString() {

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Board {
@@ -13,18 +12,24 @@ public class Board {
         for (int j = 0; j < 15; j++) {
             List<Square> row = new ArrayList<>();
             for (int i = 0; i < 15; i++) {
-                row.add(new Square(j, i, "hit", "DUPA"));
+                row.add(new Square(j, i, "O", "DUPA"));
             }
             ocean.add(row);
         }
-//        for (List<Square> a : ocean){
-//            for (Square b : a){
-//                System.out.print(b);
-//            }
-//            System.out.println();
-//            System.out.println();
-//            System.out.println();
-//        }
+//        ocean.get(0).get(4).setStatusSquare("D");
+//        ocean.get(0).get(3).setStatusSquare("D");
+//        ocean.get(0).get(2).setStatusSquare("D");
+//        ocean.get(5).get(2).setStatusSquare("M");
+//        ocean.get(7).get(12).setStatusSquare("M");
+//        ocean.get(13).get(8).setStatusSquare("H");
+//        ocean.get(13).get(9).setStatusSquare("H");
+//        ocean.get(13).get(10).setStatusSquare("S");
+//        ocean.get(2).get(9).setStatusSquare("S");
+//        ocean.get(3).get(9).setStatusSquare("S");
+//        ocean.get(4).get(9).setStatusSquare("S");
+//        ocean.get(5).get(9).setStatusSquare("S");
+//        ocean.get(6).get(9).setStatusSquare("S");
+
     }
 
 
