@@ -6,6 +6,7 @@ public class Square {
         this.statusSquare = statusSquare;
     }
 
+
     public String statusSquare;
     public  String objectName;
 
@@ -27,7 +28,6 @@ public class Square {
         this.statusSquare = statusSquare;
         this.objectName = objectName;
     }
-
 
 
     public static int[][] getPos(){
