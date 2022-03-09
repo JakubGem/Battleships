@@ -1,10 +1,28 @@
 public class Square {
-    private int xPos;
-    private int yPos;
-    public SquareStatus.status statusSquare;
-    public String objectName;
+    int xPos;
+    int yPos;
 
-    public Square(int xPos, int yPos, SquareStatus.status statusSquare, String objectName) {
+    public void setStatusSquare(String statusSquare) {
+        this.statusSquare = statusSquare;
+    }
+
+
+    public String statusSquare;
+    public  String objectName;
+
+    public String getStatusSquare() {
+        return statusSquare;
+    }
+
+    public String getObjectName() {
+        return objectName;
+    }
+
+    public void setObjectName(String objectName) {
+        this.objectName = objectName;
+    }
+
+    public Square(int xPos, int yPos, String statusSquare, String objectName) {
         this.xPos = xPos;
         this.yPos = yPos;
         this.statusSquare = statusSquare;
