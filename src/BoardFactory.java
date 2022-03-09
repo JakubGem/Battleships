@@ -3,11 +3,11 @@ import java.util.Random;
 
 //Carrier5, Cruiser3, Battleship4, Submarine2, and Destroyer1.
 public class BoardFactory {
-    public static void randomPlacement(Board board) {
-//        randomCarrierPlacement(board);
-        randomBattleshipPlacement(board);
 
-    }
+//        randomCarrierPlacement(board);
+//        randomBattleshipPlacement(board);
+//
+//    }
 
 //    public static void randomCarrierPlacement(Board board) {
 //        int[] varResult = Board.carrierPlacement(board);
@@ -26,10 +26,10 @@ public class BoardFactory {
 //        }randomBattleshipPlacement(board);CruiserPlacement
 //    }
 
-    public static void randomBattleshipPlacement(Board board) {
-        int[] numberOfFunction = {1, 2, 3, 4, 5};
-        int shipLength=0;
+    public static void randomPlacement(Board board) {
         int[] varResult;
+        int shipLength = 0;
+        int[] numberOfFunction = {1, 2, 3, 4, 5};
         for (int n = 0; n < numberOfFunction.length; n++) {
             if (numberOfFunction[n] == 1) {
                 varResult = Board.carrierPlacement(board);
@@ -43,11 +43,11 @@ public class BoardFactory {
             } else if (numberOfFunction[n] == 4) {
                 varResult = Board.SubmarinePlacement(board);
                 shipLength = 2;
-            }else{
+            } else {
                 varResult = Board.DestroyerPlacement(board);
-                shipLength=1;
+                shipLength = 1;
             }
-//        int[] varResult = Board.battleshipPlacement(board);
+
             int right = varResult[0];
             int down = varResult[1];
             int result1 = varResult[2];
@@ -55,16 +55,39 @@ public class BoardFactory {
             for (int i = 0; i < shipLength; i++) {
                 if (right == 1) {
                     board.ocean.get(result1).get(result2 + i).setStatusSquare("S");
-                    System.out.println("działa");
+                    System.out.println("działa" + shipLength);
+//                    Display.displayBoard(board);
+//                    System.out.println();
                 } else if (down == 1) {
                     board.ocean.get(result1 + i).get(result2).setStatusSquare("S");
-                    System.out.println("działa w elsie");
+                    System.out.println("działa w elsie ifie" + shipLength);
+//                    System.out.println();
+                } else {
+                    if (numberOfFunction[n] == 5) {
+                        Board.carrierPlacement(board);
+                    } else if (numberOfFunction[n] == 4) {
+                        Board.battleshipPlacement(board);
+                    } else if (numberOfFunction[n] == 3) {
+                        Board.CruiserPlacement(board);
+                    } else if (numberOfFunction[n] == 2) {
+                        Board.SubmarinePlacement(board);
+                    } else {
+                        Board.DestroyerPlacement(board);
+                    }
+
                 }
             }
         }
     }
 
-
+    public static int[] random(Board board) {
+        Random rand = new Random();
+        int randomx = rand.nextInt(1, 15);
+        int randomy = rand.nextInt(1, 15);
+        System.out.println(randomx);
+        System.out.println(randomy);
+        return new int[]{randomx - 1, randomy - 1};
+    }
 
 //    {
 //        draw(board);
@@ -160,18 +183,6 @@ public class BoardFactory {
 //
 //        }
 
-
-
-    public static int[] random(Board board){
-        Random rand = new Random();
-        int max = 14;
-        int randomx = rand.nextInt(1, 15);
-        int randomy = rand.nextInt(1,15);
-        System.out.println(randomx);
-        System.out.println(randomy);
-        return new int[] {randomx-1, randomy-1};
-    }
-
 //    public static int[] ships(){
 //        int Carrier = 5;
 //        int Battleship = 4;
@@ -182,8 +193,7 @@ public class BoardFactory {
 //    }
 
 
-
-    public static void manualPlacement(){
+    public static void manualPlacement() {
 
     }
 
