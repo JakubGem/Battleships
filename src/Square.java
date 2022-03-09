@@ -2,15 +2,15 @@ public class Square {
     int xPos;
     int yPos;
 
-    public void setStatusSquare(String statusSquare) {
+    public void setStatusSquare(SquareStatus.status statusSquare) {
         this.statusSquare = statusSquare;
     }
 
 
-    public String statusSquare;
-    public  String objectName;
+    public SquareStatus.status statusSquare;
+    public String objectName;
 
-    public String getStatusSquare() {
+    public SquareStatus.status getStatusSquare() {
         return statusSquare;
     }
 
@@ -22,7 +22,7 @@ public class Square {
         this.objectName = objectName;
     }
 
-    public Square(int xPos, int yPos, String statusSquare, String objectName) {
+    public Square(int xPos, int yPos, SquareStatus.status statusSquare, String objectName) {
         this.xPos = xPos;
         this.yPos = yPos;
         this.statusSquare = statusSquare;

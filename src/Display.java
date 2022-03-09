@@ -29,7 +29,7 @@ public class Display {
                 boardString += rowHeader[j] + "|";
             }
             for (int i = 0; i < board.toArray().length; i++) {
-                boardString += " * ";
+                boardString += " " + board.get(j).get(i).getSquareStatus() + " ";
             }
             boardString += "\n";
         }

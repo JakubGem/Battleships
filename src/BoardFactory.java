@@ -17,52 +17,52 @@ public class BoardFactory {
         for(int i=0; i< result.length; i++) {
             if (resultShip[i] == 5) {
                 for(int d=0; d<5; d++){
-                    if(board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0+1]).get(result[1]).getStatusSquare().equals("O")
-                            && board.ocean.get(result[0+2]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0+3]).get(result[1]).getStatusSquare().equals("O")
-                            && board.ocean.get(result[0+4]).get(result[1]).getStatusSquare().equals("O")) {
-                        board.ocean.get(result[0+d]).get(result[1]).setStatusSquare("S");
-                    }else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1+1]).getStatusSquare().equals("O")
-                            && board.ocean.get(result[0]).get(result[1+2]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1+3]).getStatusSquare().equals("O")
-                            && board.ocean.get(result[0]).get(result[1+4]).getStatusSquare().equals("O")){
-                        board.ocean.get(result[0]).get(result[1+d]).setStatusSquare("S");
+                    if(board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0+1]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN)
+                            && board.ocean.get(result[0+2]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0+3]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN)
+                            && board.ocean.get(result[0+4]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN)) {
+                        board.ocean.get(result[0+d]).get(result[1]).setStatusSquare(SquareStatus.status.SHIP);
+                    }else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0]).get(result[1+1]).getStatusSquare().equals(SquareStatus.status.OCEAN)
+                            && board.ocean.get(result[0]).get(result[1+2]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0]).get(result[1+3]).getStatusSquare().equals(SquareStatus.status.OCEAN)
+                            && board.ocean.get(result[0]).get(result[1+4]).getStatusSquare().equals(SquareStatus.status.OCEAN)){
+                        board.ocean.get(result[0]).get(result[1+d]).setStatusSquare(SquareStatus.status.SHIP);
                     }
                 }
             }
             else if(resultShip[i] == 4){
                 for(int d=0; d<4; d++) {
-                    if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0+1]).get(result[1]).getStatusSquare().equals("O")
-                            && board.ocean.get(result[0+2]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0+3]).get(result[1]).getStatusSquare().equals("O")) {
-                        board.ocean.get(result[0+d]).get(result[1]).setStatusSquare("S");
-                    }else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1+1]).getStatusSquare().equals("O")
-                            && board.ocean.get(result[0]).get(result[1+2]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1+3]).getStatusSquare().equals("O")) {
-                        board.ocean.get(result[0]).get(result[1+d]).setStatusSquare("S");
+                    if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0+1]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN)
+                            && board.ocean.get(result[0+2]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0+3]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN)) {
+                        board.ocean.get(result[0+d]).get(result[1]).setStatusSquare(SquareStatus.status.SHIP);
+                    }else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0]).get(result[1+1]).getStatusSquare().equals(SquareStatus.status.OCEAN)
+                            && board.ocean.get(result[0]).get(result[1+2]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0]).get(result[1+3]).getStatusSquare().equals(SquareStatus.status.OCEAN)) {
+                        board.ocean.get(result[0]).get(result[1+d]).setStatusSquare(SquareStatus.status.SHIP);
                     }
                 }
             }
             else if(resultShip[i] == 3){
                 for(int d=0; d<3; d++) {
-                    if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0+1]).get(result[1]).getStatusSquare().equals("O")
-                            && board.ocean.get(result[0+2]).get(result[1]).getStatusSquare().equals("O")) {
-                        board.ocean.get(result[0+d]).get(result[1]).setStatusSquare("S");
-                    }else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1+1]).getStatusSquare().equals("O")
-                            && board.ocean.get(result[0]).get(result[1+2]).getStatusSquare().equals("O")) {
-                        board.ocean.get(result[0]).get(result[1+d]).setStatusSquare("S");
+                    if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0+1]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN)
+                            && board.ocean.get(result[0+2]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN)) {
+                        board.ocean.get(result[0+d]).get(result[1]).setStatusSquare(SquareStatus.status.SHIP);
+                    }else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0]).get(result[1+1]).getStatusSquare().equals(SquareStatus.status.OCEAN)
+                            && board.ocean.get(result[0]).get(result[1+2]).getStatusSquare().equals(SquareStatus.status.OCEAN)) {
+                        board.ocean.get(result[0]).get(result[1+d]).setStatusSquare(SquareStatus.status.SHIP);
                     }
                 }
             }
             else if(resultShip[i] == 2){
                 for(int d=0; d<2; d++) {
-                    if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0+1]).get(result[1]).getStatusSquare().equals("O")) {
-                        board.ocean.get(result[0+d]).get(result[1]).setStatusSquare("S");
-                    }else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1+1]).getStatusSquare().equals("O")) {
-                        board.ocean.get(result[0]).get(result[1+d]).setStatusSquare("S");
+                    if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0+1]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN)) {
+                        board.ocean.get(result[0+d]).get(result[1]).setStatusSquare(SquareStatus.status.SHIP);
+                    }else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN) && board.ocean.get(result[0]).get(result[1+1]).getStatusSquare().equals(SquareStatus.status.OCEAN)) {
+                        board.ocean.get(result[0]).get(result[1+d]).setStatusSquare(SquareStatus.status.SHIP);
                     }
                 }
             }else if(resultShip[i] == 1){
-                if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O")) {
-                    board.ocean.get(result[0]).get(result[1]).setStatusSquare("S");
-                }else if (board.ocean.get(result[0+1]).get(result[1+1]).getStatusSquare().equals("O")) {
-                    board.ocean.get(result[0+1]).get(result[1+1]).setStatusSquare("S");
+                if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals(SquareStatus.status.OCEAN)) {
+                    board.ocean.get(result[0]).get(result[1]).setStatusSquare(SquareStatus.status.SHIP);
+                }else if (board.ocean.get(result[0+1]).get(result[1+1]).getStatusSquare().equals(SquareStatus.status.OCEAN)) {
+                    board.ocean.get(result[0+1]).get(result[1+1]).setStatusSquare(SquareStatus.status.SHIP);
                 }
             }
         }
