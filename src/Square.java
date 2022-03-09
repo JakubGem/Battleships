@@ -38,6 +38,10 @@ public class Square {
         return(SquareStatus.getCharacter(statusSquare));
     }
 
+    public void setSquareStatus(SquareStatus.status status) {
+        statusSquare = status;
+    }
+
     @Override
     public String toString() {
         return "Square{" +
