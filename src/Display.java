@@ -200,13 +200,13 @@ public class Display {
                 boardString += "               " +  AnsiColors.ANSI_CYAN_BACKGROUND + AnsiColors.ANSI_BLACK + rowHeader[col] + "|" + AnsiColors.ANSI_RESET;
             }
             for (int row = 0; row < myBoard.toArray().length; row++) {
-                if (myBoard.get(col).get(row).getStatusSquare().equals("S")){                      //jeśli jest statek
+                if (myBoard.get(col).get(row).getSquareStatus().equals("S")){                      //jeśli jest statek
                     boardString += AnsiColors.ANSI_BLACK_BACKGROUND + "   "  + AnsiColors.ANSI_RESET;
-                }else if (myBoard.get(col).get(row).getStatusSquare().equals("H")){                //jeśli statek częściowo jest podbity
+                }else if (myBoard.get(col).get(row).getSquareStatus().equals("H")){                //jeśli statek częściowo jest podbity
                     boardString += AnsiColors.ANSI_BLACK_BACKGROUND + AnsiColors.ANSI_RED + " ● "  + AnsiColors.ANSI_RESET;
-                }else if (myBoard.get(col).get(row).getStatusSquare().equals("D")){                //jeśli statek jest cały zniszczony
+                }else if (myBoard.get(col).get(row).getSquareStatus().equals("D")){                //jeśli statek jest cały zniszczony
                     boardString += AnsiColors.ANSI_BLACK_BACKGROUND + AnsiColors.ANSI_RED + " X "  + AnsiColors.ANSI_RESET;
-                }else if (myBoard.get(col).get(row).getStatusSquare().equals("M")){                //jeśli był strzał w puste miejsce
+                }else if (myBoard.get(col).get(row).getSquareStatus().equals("M")){                //jeśli był strzał w puste miejsce
                     boardString += AnsiColors.ANSI_WHITE_BACKGROUND + AnsiColors.ANSI_RED + " ● "  + AnsiColors.ANSI_RESET;
                 }else {                     //jeśli jest puste nieruszone miejsce
                     boardString += AnsiColors.ANSI_WHITE_BACKGROUND + " ? " + AnsiColors.ANSI_RESET;
@@ -219,11 +219,11 @@ public class Display {
                 boardString += AnsiColors.ANSI_CYAN_BACKGROUND + AnsiColors.ANSI_BLACK + rowHeader[col] + "|" + AnsiColors.ANSI_RESET;
             }
             for (int row = 0; row < opponentBoard.toArray().length; row++) {
-                if (opponentBoard.get(col).get(row).getStatusSquare().equals("H")){                //jeśli statek częściowo jest podbity
+                if (opponentBoard.get(col).get(row).getSquareStatus().equals("H")){                //jeśli statek częściowo jest podbity
                     boardString += AnsiColors.ANSI_BLACK_BACKGROUND + AnsiColors.ANSI_RED + " ● "  + AnsiColors.ANSI_RESET;
-                }else if (opponentBoard.get(col).get(row).getStatusSquare().equals("D")){                //jeśli statek jest cały zniszczony
+                }else if (opponentBoard.get(col).get(row).getSquareStatus().equals("D")){                //jeśli statek jest cały zniszczony
                     boardString += AnsiColors.ANSI_BLACK_BACKGROUND + AnsiColors.ANSI_RED + " X "  + AnsiColors.ANSI_RESET;
-                }else if (opponentBoard.get(col).get(row).getStatusSquare().equals("M")){                //jeśli był strzał w puste miejsce
+                }else if (opponentBoard.get(col).get(row).getSquareStatus().equals("M")){                //jeśli był strzał w puste miejsce
                     boardString += AnsiColors.ANSI_WHITE_BACKGROUND + AnsiColors.ANSI_RED + " ● "  + AnsiColors.ANSI_RESET;
                 }else {                     //jeśli jest puste nieruszone miejsce
                     boardString += AnsiColors.ANSI_WHITE_BACKGROUND + " ? " + AnsiColors.ANSI_RESET;
