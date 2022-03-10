@@ -1,6 +1,21 @@
+BoardFactory
+
+
+
 import java.util.Random;
 
 public class BoardFactory {
+
+    public static void placementController(boolean[] kindOfPlacement, Board board){
+        boolean random;
+        boolean manual;
+        if(random){
+            Board.informationToValidate(board);
+        }else{
+
+        }
+
+    }
 
 
     public static void randomPlacement(Board board, int shipLength, int way, int[] result) {
