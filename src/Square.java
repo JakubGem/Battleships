@@ -1,14 +1,28 @@
 public class Square {
-    private int xPos;
-    private int yPos;
-    public String statusSquare;
-    public  String objectName;
+    int xPos;
+    int yPos;
 
-    public String getStatusSquare() {
+    public void setStatusSquare(SquareStatus.status statusSquare) {
+        this.statusSquare = statusSquare;
+    }
+
+
+    public SquareStatus.status statusSquare;
+    public String objectName;
+
+    public SquareStatus.status getStatusSquare() {
         return statusSquare;
     }
 
-    public Square(int xPos, int yPos, String statusSquare, String objectName) {
+    public String getObjectName() {
+        return objectName;
+    }
+
+    public void setObjectName(String objectName) {
+        this.objectName = objectName;
+    }
+
+    public Square(int xPos, int yPos, SquareStatus.status statusSquare, String objectName) {
         this.xPos = xPos;
         this.yPos = yPos;
         this.statusSquare = statusSquare;
@@ -20,8 +34,12 @@ public class Square {
         return null;
     }
 
-    public static boolean getSquareStatus(){
-        return false;
+    public String getSquareStatus(){
+        return(SquareStatus.getCharacter(statusSquare));
+    }
+
+    public void setSquareStatus(SquareStatus.status status) {
+        statusSquare = status;
     }
 
     @Override
