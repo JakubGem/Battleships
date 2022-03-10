@@ -14,7 +14,7 @@ public class Board {
         for (int j = 0; j < 15; j++) {
             List<Square> row = new ArrayList<>();
             for (int i = 0; i < 15; i++) {
-                row.add(new Square(j, i, "O", "DUPA"));
+                row.add(new Square(j, i, "O", "none"));
             }
             ocean.add(row);
         }
@@ -126,14 +126,15 @@ public class Board {
         //2
         int[] result = BoardFactory.random();
         try {
-            if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1] + 1).getStatusSquare().equals("O")
-                    && board.ocean.get(result[0]).get(result[1] + 2).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1]-1).getStatusSquare().equals("O")
+            for (int step=-1; step<3; step++){
+            if (board.ocean.get(result[0]).get(result[1] + step).getStatusSquare().equals("O")
 
-                    && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 1).get(result[1] + step).getStatusSquare().equals("O")
 
-                    && board.ocean.get(result[0] - 1).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] - 1).get(result[1]+1).getStatusSquare().equals("O")) {
+                    && board.ocean.get(result[0] - 1).get(result[1] + step).getStatusSquare().equals("O")) {
                 BoardFactory.randomPlacement(board, 2, 1, result);
-            } else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O")
+            } }
+            if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O")
                     && board.ocean.get(result[0] + 2).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]-1).get(result[1]).getStatusSquare().equals("O")
 
                     && board.ocean.get(result[0]).get(result[1]+1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+1).getStatusSquare().equals("O")
