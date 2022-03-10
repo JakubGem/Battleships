@@ -10,13 +10,13 @@ public class Board {
         return false;
     }
 
-    public Board(List<List<Square>> firstPlayerOcean) {
+    public Board(List<List<Square>> ocean) {
         for (int j = 0; j < 15; j++) {
             List<Square> row = new ArrayList<>();
             for (int i = 0; i < 15; i++) {
-                row.add(new Square(j, i, SquareStatus.status.OCEAN, "OCEAN"));
+                row.add(new Square(j, i, SquareStatus.status.OCEAN, "O"));
             }
-            firstPlayerOcean.add(row);
+            ocean.add(row);
         }
     }
 

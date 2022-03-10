@@ -16,10 +16,10 @@ public class BoardFactory {
         }
         for (int i = 0; i < shipLength; i++) {
             if (way == 1) {
-                board.ocean.get(result[0]).get(result[1] + i).setStatusSquare("S");
+                board.ocean.get(result[0]).get(result[1] + i).setStatusSquare(SquareStatus.status.SHIP);
                 board.ocean.get(result[0]).get(result[1] + i).setObjectName(shipName);
             } else if (way == 2) {
-                board.ocean.get(result[0] + i).get(result[1]).setStatusSquare("S");
+                board.ocean.get(result[0] + i).get(result[1]).setStatusSquare(SquareStatus.status.SHIP);
                 board.ocean.get(result[0] + i).get(result[1]).setObjectName(shipName);
             }
         }
@@ -27,11 +27,11 @@ public class BoardFactory {
 
     public static int[] random() {
         Random rand = new Random();
-        int randomx = rand.nextInt(1, 15);
-        int randomy = rand.nextInt(1, 15);
-        System.out.println(randomx);
-        System.out.println(randomy);
-        return new int[]{randomx - 1, randomy - 1};
+        int randomX = rand.nextInt(1, 15);
+        int randomY = rand.nextInt(1, 15);
+        System.out.println(randomX);
+        System.out.println(randomY);
+        return new int[]{randomX - 1, randomY - 1};
     }
 
     public static void manualPlacement() {
