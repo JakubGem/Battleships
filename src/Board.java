@@ -71,9 +71,9 @@ public class Board {
             boolean check = false;
             while (!check) {
                 int direction = randomNumber();
-                int[] result = BoardFactory.random();
+                int[] result = {coordinates.get(0),coordinates.get(1)};
                 try {
-                    check = verifyRandomPlacement(length, direction, board, result);
+                    check = isPlacementOk(length, direction, board, result);
                 } catch (IndexOutOfBoundsException e) {
                     continue;
                 }
@@ -81,19 +81,13 @@ public class Board {
         }
     }
 
-
-    private static boolean isPlacementOk(Board board, List<Integer> coordinates) {
-        int coordinateX = coordinates.get(0);
-        int coordinateY = coordinates.get(1);
-        ArrayList coordinates = Input.getCoordinatesFromInput();
-//        int coordinatex = coordinates.toArray()[0];
-        for(int cor=0; cor<coordinates.toArray().length; cor++){
-            if(cor == 0){
-                coordinatex = (int) coordinates.get(cor);
-            }else{
-                coordinatey = (int) coordinates.get(cor);
-            }
-        }
+    // random or manual placement?
+    //normal or unusual game mode?
+    // input coordinates (one per ship)
+    // what kind of placement (vertical/horizontal)
+    public static boolean isPlacementOk(int shipLength, int direction, Board board, int[] result) {
+        int coordinateX = result[0];
+        int coordinateY = result[1];
         boolean check = true;
         for (int step = -1; step < shipLength + 1; step++) {
             for (int i = -1; i <= 1; i++) {
@@ -116,5 +110,6 @@ public class Board {
             return false;
         }
     }
+}
 
 

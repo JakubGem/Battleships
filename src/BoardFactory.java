@@ -1,18 +1,15 @@
-BoardFactory
-
-
-
+import java.util.List;
 import java.util.Random;
 
 public class BoardFactory {
 
-    public static void placementController(boolean[] kindOfPlacement, Board board){
+    public static void placementController(boolean[] kindOfPlacement, Board board, List<Integer> coordinates){
         boolean random;
         boolean manual;
         if(random){
             Board.informationToValidate(board);
         }else{
-
+            Board.informationToValidateManual(board, coordinates);
         }
 
     }
