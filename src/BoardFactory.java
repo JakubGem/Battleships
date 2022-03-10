@@ -3,18 +3,6 @@ import java.util.Random;
 
 public class BoardFactory {
 
-//    public static void placementController(boolean[] kindOfPlacement, Board board){
-//        boolean random;
-//        boolean manual;
-//
-//        if(random){
-//            Board.informationToValidate(board);
-//        }else{
-//            Board.informationToValidateManual(board, coordinates);
-//        }
-//
-//    }
-
 
     public static void randomPlacement(Board board, int shipLength, int way, int[] result) {
         String shipName = "none";
@@ -31,9 +19,11 @@ public class BoardFactory {
             if (way == 1) {
                 board.ocean.get(result[0]).get(result[1] + i).setStatusSquare(SquareStatus.status.SHIP);
                 board.ocean.get(result[0]).get(result[1] + i).setObjectName(shipName);
+                board.ocean.get(result[0]).get(result[1] + i).setObjectWay(way);
             } else if (way == 2) {
                 board.ocean.get(result[0] + i).get(result[1]).setStatusSquare(SquareStatus.status.SHIP);
                 board.ocean.get(result[0] + i).get(result[1]).setObjectName(shipName);
+                board.ocean.get(result[0]).get(result[1] + i).setObjectWay(way);
             }
         }
     }

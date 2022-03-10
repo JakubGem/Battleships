@@ -8,15 +8,12 @@ public class Board {
     static Display display = new Display();
     public List<List<Square>> ocean = new ArrayList<>();
 
-//    private static boolean isPlacementOk(int[] placement) {
-//        return ((0 <= placement[0]) && (placement[0] <= 14) && (0 <= placement[1]) && (placement[1] <= 14));
-//    }
 
     public Board(List<List<Square>> ocean) {
         for (int j = 0; j < 15; j++) {
             List<Square> row = new ArrayList<>();
             for (int i = 0; i < 15; i++) {
-                row.add(new Square(j, i, SquareStatus.status.OCEAN, "O"));
+                row.add(new Square(j, i, SquareStatus.status.OCEAN, "O", 0));
             }
             this.ocean.add(row);
         }
@@ -70,7 +67,15 @@ public class Board {
         return randomNumber;
     }
 
+
+
     public static void informationToValidateManual(Board board, Board opponentBoard) {
+        display.manualPlacementOfAllFiveKindOfShips();
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         int[] ships = {5, 4, 4, 3, 3, 3, 2, 2, 2};
         for (int length : ships) {
             boolean check = false;

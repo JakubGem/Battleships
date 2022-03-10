@@ -19,7 +19,7 @@ public class Game {
         playerOne = new Board(firstPlayerOcean);
         playerTwo = new Board(secondPlayerOcean);
         Display display = new Display();
-        display.howDoYouWantToPositionTheShips();
+        display.chooseMethodOfStagingShips();
         boolean manual = false;
         if(scanner.hasNextInt()) {
             int userInput = scanner.nextInt();

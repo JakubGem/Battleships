@@ -5,10 +5,9 @@ public class Square {
     public void setStatusSquare(SquareStatus.status statusSquare) {
         this.statusSquare = statusSquare;
     }
-
-
     public SquareStatus.status statusSquare;
     public String objectName;
+    public int objectWay;
 
     public SquareStatus.status getStatusSquare() {
         return statusSquare;
@@ -22,11 +21,20 @@ public class Square {
         this.objectName = objectName;
     }
 
-    public Square(int xPos, int yPos, SquareStatus.status statusSquare, String objectName) {
+    public int getObjectWay() {
+        return objectWay;
+    }
+
+    public void setObjectWay(int objectWay) {
+        this.objectWay = objectWay;
+    }
+
+    public Square(int xPos, int yPos, SquareStatus.status statusSquare, String objectName, int objectWay) {
         this.xPos = xPos;
         this.yPos = yPos;
         this.statusSquare = statusSquare;
         this.objectName = objectName;
+        this.objectWay = objectWay;
     }
 
 
