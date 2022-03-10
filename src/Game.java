@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Game {
     public boolean gameOver;
@@ -9,12 +10,25 @@ public class Game {
     private static final List<List<Square>> firstPlayerOcean = new ArrayList<>();
     private static final List<List<Square>> secondPlayerOcean = new ArrayList<>();
     Input input = new Input();
+    Board board;
+    Scanner scanner = new Scanner(System.in);
     //Player: isAlive, canShoot, handleShots
 
 
     public void playGame() {
         Display display = new Display();
-        setBoards(false); //todo replace when manual placement ready, line 73
+        System.out.println("chcesz sam ustawić czy automatycznie?");
+        boolean manual = false;
+        if(scanner.hasNextInt()) {
+            int userInput = scanner.nextInt();
+            switch (userInput){
+                case 1 -> manual = true;
+                case 2 -> manual = false;
+            }
+        } else {
+            display.alertPleaseGiveCorrectNumber();
+        }
+        setBoards(manual); //todo replace when manual placement ready, line 73
         int currentPlayer = 1;
 
         Board.informationToValidate(playerOne);
@@ -72,7 +86,7 @@ public class Game {
             playerOne = new Board(firstPlayerOcean);
             playerTwo = new Board(secondPlayerOcean);
         } else {
-            //todo manual placement
+            board.informationToValidateManual((Board) board.ocean);
         }
     }
 }

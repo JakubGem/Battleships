@@ -76,8 +76,15 @@ public class Display {
 
     Square square;
 
+    public void alertPleaseGiveCorrectNumber() {
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("                                                                    " + AnsiColors.ANSI_BLACK + AnsiColors.ANSI_RED_BACKGROUND + " Please give correct number (1/2)! " + AnsiColors.ANSI_RESET);
+        System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " New coordinates: " + AnsiColors.ANSI_RESET);
+    }
 
-    public void manualPlacement5HolesShips() {
+    public  void manualPlacement5HolesShips() {
         System.out.println();
         System.out.println();
         System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " Give the coordinates for inserting the ship \"CARRIER\" (5 holes): " + AnsiColors.ANSI_RESET);

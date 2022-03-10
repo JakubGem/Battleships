@@ -3,7 +3,8 @@ import java.util.List;
 import java.util.Random;
 
 public class Board {
-
+    static Input input = new Input();
+    static Display display = new Display();
     public List<List<Square>> ocean = new ArrayList<>();
 
 //    private static boolean isPlacementOk(int[] placement) {
@@ -68,13 +69,22 @@ public class Board {
         return randomNumber;
     }
 
-    public static void informationToValidateManual(Board board, List<Integer> coordinates) {
+    public  void informationToValidateManual(Board board) {
         int[] ships = {5, 4, 4, 3, 3, 3, 2, 2, 2};
         for (int length : ships) {
             boolean check = false;
             while (!check) {
                 int direction = randomNumber();
-                int[] result = {coordinates.get(0),coordinates.get(1)};
+                if(length == 5){
+                    display.manualPlacement5HolesShips();
+                }else if(length == 4){
+                    display.manualPlacement4HolesShips();
+                }else if(length == 3){
+                    display.manualPlacement3HolesShips();
+                }else{
+                    display.manualPlacement2HolesShips();
+                }
+                int[] result = input.getCoordinatesFromInput();
                 try {
                     check = isPlacementOk(length, direction, board, result);
                 } catch (IndexOutOfBoundsException e) {
