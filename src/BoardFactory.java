@@ -14,7 +14,7 @@ public class BoardFactory {
         }
     }
 
-    public static int[] random(Board board) {
+    public static int[] random() {
         Random rand = new Random();
         int randomx = rand.nextInt(1, 15);
         int randomy = rand.nextInt(1, 15);
