@@ -14,6 +14,7 @@ public class Battleship {
         Board.informationToValidate(playerTwo);
 
         display.displayBoard(playerOne.ocean, playerTwo.ocean);
+        display.displayBoard(playerTwo.ocean, playerOne.ocean);
 
     }
 

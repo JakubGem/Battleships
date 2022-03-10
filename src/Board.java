@@ -16,19 +16,20 @@ public class Board {
             for (int i = 0; i < 15; i++) {
                 row.add(new Square(j, i, SquareStatus.status.OCEAN, "O"));
             }
-            ocean.add(row);
+            this.ocean.add(row);
         }
     }
 
 
     public static void informationToValidate(Board board) {
-        int[] ships = {5, 4, 3, 3, 2};
+        int[] ships = {5, 4, 4, 3, 3, 3, 2, 2, 2};
         for (int length : ships) {
-            int direction = randomNumber();
             boolean check = false;
             while (!check) {
+                int direction = randomNumber();
+                int[] result = BoardFactory.random();
                 try {
-                    check = verifyRandomPlacement(length, direction, board);
+                    check = verifyRandomPlacement(length, direction, board, result);
                 } catch (IndexOutOfBoundsException e) {
                     continue;
                 }
@@ -36,15 +37,15 @@ public class Board {
         }
     }
 
-    public static boolean verifyRandomPlacement(int shipLength, int direction, Board board) {
+    public static boolean verifyRandomPlacement(int shipLength, int direction, Board board, int[] result) {
         boolean check = true;
-        int[] result = BoardFactory.random();
+
         for (int step = -1; step < shipLength + 1; step++) {
             for (int i = -1; i <= 1; i++) {
-                if (direction == 1 && !board.ocean.get(result[0] + i).get(result[1] + step).getStatusSquare().equals("O")) {
+                if (direction == 1 && !board.ocean.get(result[0] + i).get(result[1] + step).getStatusSquare().equals(SquareStatus.status.OCEAN)) {
                     check = false;
                     break;
-                } else if (direction == 2 && !board.ocean.get(result[0] + step).get(result[1] + i).getStatusSquare().equals("O")) {
+                } else if (direction == 2 && !board.ocean.get(result[0] + step).get(result[1] + i).getStatusSquare().equals(SquareStatus.status.OCEAN)) {
                     check = false;
                     break;
                 }
