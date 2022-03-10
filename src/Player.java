@@ -1,29 +1,29 @@
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    //public List<Ship> ship = new ArrayList<Ship>();
-
-    public static void handleShots(List<Integer> shootingCoordinates, List<List<Square>> board){
-        int coordinateX = shootingCoordinates.get(0);
-        int coordinateY = shootingCoordinates.get(1);
+    public static boolean handleShots(int[] shootingCoordinates, List<List<Square>> board){
+        Display display = new Display();
+        int coordinateX = shootingCoordinates[0];
+        int coordinateY = shootingCoordinates[1];
         switch (board.get(coordinateX).get(coordinateY).getStatusSquare()) {
             case OCEAN:
                 board.get(coordinateX).get(coordinateY).setStatusSquare(SquareStatus.status.MISS);
-                break;
+                display.alertMiss();
+                return false;
             case SHIP:
                 board.get(coordinateX).get(coordinateY).setStatusSquare(SquareStatus.status.HIT);
-                break;
+                display.alertHitting();
+                return true;
 
         }
         System.out.println(board.get(coordinateX).get(coordinateY).getStatusSquare());
 
+        return false;
     }
 
-    public static boolean canShoot(List<Integer> shootingCoordinates, List<List<Square>> board){
-        int coordinateX = shootingCoordinates.get(0);
-        int coordinateY = shootingCoordinates.get(1);
+    public static boolean canShoot(int[] shootingCoordinates, List<List<Square>> board){
+        int coordinateX = shootingCoordinates[0];
+        int coordinateY = shootingCoordinates[1];
         if (board.get(coordinateX).get(coordinateY).getStatusSquare() == SquareStatus.status.MISS || board.get(coordinateX).get(coordinateY).getStatusSquare() == SquareStatus.status.HIT){
             return false;
         }
