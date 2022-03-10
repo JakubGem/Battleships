@@ -107,6 +107,12 @@ public class Display {
         System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " Give the coordinates for inserting the ship \"DESTROYER\" (1 holes): " + AnsiColors.ANSI_RESET);
     }
 
+    public void manualGiveCoordinateForShot() {
+        System.out.println();
+        System.out.println();
+        System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " Give the coordinates for shot: " + AnsiColors.ANSI_RESET);
+    }
+
 
     // ALERTY
     public void alertYouCanntSetAShipHere() {
@@ -116,6 +122,14 @@ public class Display {
         System.out.print("                                                                    " + AnsiColors.ANSI_BLACK + AnsiColors.ANSI_RED_BACKGROUND + " You can't set a ship here! " + AnsiColors.ANSI_RESET);
         System.out.println();
         System.out.println();
+    }
+
+    public void alertPleaseGiveCorrectCoordinates() {
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("                                                                    " + AnsiColors.ANSI_BLACK + AnsiColors.ANSI_RED_BACKGROUND + " Please Give correct coordinates! " + AnsiColors.ANSI_RESET);
+        System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " New coordinates: " + AnsiColors.ANSI_RESET);
     }
 
 

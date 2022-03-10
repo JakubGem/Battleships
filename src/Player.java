@@ -1,10 +1,10 @@
 import java.util.List;
 
 public class Player {
-    public static boolean handleShots(List<Integer> shootingCoordinates, List<List<Square>> board){
+    public static boolean handleShots(int[] shootingCoordinates, List<List<Square>> board){
         Display display = new Display();
-        int coordinateX = shootingCoordinates.get(0);
-        int coordinateY = shootingCoordinates.get(1);
+        int coordinateX = shootingCoordinates[0];
+        int coordinateY = shootingCoordinates[1];
         switch (board.get(coordinateX).get(coordinateY).getStatusSquare()) {
             case OCEAN:
                 board.get(coordinateX).get(coordinateY).setStatusSquare(SquareStatus.status.MISS);
@@ -21,9 +21,9 @@ public class Player {
         return false;
     }
 
-    public static boolean canShoot(List<Integer> shootingCoordinates, List<List<Square>> board){
-        int coordinateX = shootingCoordinates.get(0);
-        int coordinateY = shootingCoordinates.get(1);
+    public static boolean canShoot(int[] shootingCoordinates, List<List<Square>> board){
+        int coordinateX = shootingCoordinates[0];
+        int coordinateY = shootingCoordinates[1];
         if (board.get(coordinateX).get(coordinateY).getStatusSquare() == SquareStatus.status.MISS || board.get(coordinateX).get(coordinateY).getStatusSquare() == SquareStatus.status.HIT){
             return false;
         }

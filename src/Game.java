@@ -8,6 +8,7 @@ public class Game {
     private static Board playerTwo;
     private static final List<List<Square>> firstPlayerOcean = new ArrayList<>();
     private static final List<List<Square>> secondPlayerOcean = new ArrayList<>();
+    Input input = new Input();
     //Player: isAlive, canShoot, handleShots
 
 
@@ -42,7 +43,8 @@ public class Game {
             display.alertCurrentPlayer(player);
             display.displayBoard(playerOne.ocean, playerTwo.ocean); // display board
 
-            ArrayList<Integer> inputCoordinates = Input.getCoordinatesFromInput();
+            display.manualGiveCoordinateForShot();
+            int[] inputCoordinates = input.getCoordinatesFromInput();
 
             if (Player.canShoot(inputCoordinates, playerTwo.ocean)) {
                 boolean lastHit = Player.handleShots(inputCoordinates, playerTwo.ocean);
