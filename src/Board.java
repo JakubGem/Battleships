@@ -6,9 +6,6 @@ public class Board {
 
     public List<List<Square>> ocean = new ArrayList<>();
 
-    private static boolean isPlacementOk(int[][] placement) {
-        return false;
-    }
 
     public Board(List<List<Square>> ocean) {
         for (int j = 0; j < 15; j++) {
@@ -67,5 +64,12 @@ public class Board {
         int randomNumber = rand.nextInt(1, 3);
         return randomNumber;
     }
+
+    private static boolean isPlacementOk() {
+        return false;
+    }
+
+
 }
+
 
