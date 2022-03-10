@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Board {
     static Input input = new Input();
+    static Game game = new Game();
     static Display display = new Display();
     public List<List<Square>> ocean = new ArrayList<>();
 
@@ -69,12 +70,21 @@ public class Board {
         return randomNumber;
     }
 
-    public  void informationToValidateManual(Board board) {
+    public static void informationToValidateManual(Board board, Board opponentBoard) {
         int[] ships = {5, 4, 4, 3, 3, 3, 2, 2, 2};
         for (int length : ships) {
             boolean check = false;
             while (!check) {
                 int direction = randomNumber();
+                String playerName;
+                if (game.currentPlayer==1){
+                    playerName = "Player One";
+                } else {
+                    playerName = "Player Two";
+                }
+                display.alertNowPlayerNameIsPositionShips(playerName);
+                display.displayBoard(board.ocean, opponentBoard.ocean);
+
                 if(length == 5){
                     display.manualPlacement5HolesShips();
                 }else if(length == 4){
@@ -88,6 +98,7 @@ public class Board {
                 try {
                     check = isPlacementOk(length, direction, board, result);
                 } catch (IndexOutOfBoundsException e) {
+                    display.alertPleaseGiveCorrectCoordinates1();
                     continue;
                 }
             }

@@ -89,6 +89,11 @@ public class Display {
         System.out.println();
         System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " Give the coordinates for inserting the ship \"CARRIER\" (5 holes): " + AnsiColors.ANSI_RESET);
     }
+    public  void howDoYouWantToPositionTheShips() {
+        System.out.println();
+        System.out.println();
+        System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " How do you want to position the ships? (1->manual / 2->random) : " + AnsiColors.ANSI_RESET);
+    }
 
     public void manualPlacement4HolesShips() {
         System.out.println();
@@ -137,6 +142,13 @@ public class Display {
         System.out.println();
         System.out.println("                                                                    " + AnsiColors.ANSI_BLACK + AnsiColors.ANSI_RED_BACKGROUND + " Please Give correct coordinates! " + AnsiColors.ANSI_RESET);
         System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " New coordinates: " + AnsiColors.ANSI_RESET);
+    }
+
+    public void alertPleaseGiveCorrectCoordinates1() {
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("                                                                  " + AnsiColors.ANSI_BLACK + AnsiColors.ANSI_RED_BACKGROUND + " Please Give correct coordinates! " + AnsiColors.ANSI_RESET);
     }
 
 
@@ -200,6 +212,15 @@ public class Display {
         System.out.println();
         System.out.println();
         System.out.print("                                                               " + AnsiColors.ANSI_BLACK + AnsiColors.ANSI_BLUE_BACKGROUND + " Congratulations! Player " + AnsiColors.ANSI_RED_BACKGROUND + " " + playerName + " " + AnsiColors.ANSI_BLUE_BACKGROUND + " won! " + AnsiColors.ANSI_RESET);
+        System.out.println();
+        System.out.println();
+    }
+
+    public void alertNowPlayerNameIsPositionShips(String playerName) {
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.print("                                                               " + AnsiColors.ANSI_BLACK + AnsiColors.ANSI_BLUE_BACKGROUND + " Now " + AnsiColors.ANSI_RED_BACKGROUND + " " + playerName + " " + AnsiColors.ANSI_BLUE_BACKGROUND + " is position ships! " + AnsiColors.ANSI_RESET);
         System.out.println();
         System.out.println();
     }
