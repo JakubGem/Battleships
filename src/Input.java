@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Input {
+    Display display = new Display();
 
     public static String getUserInput() {
-        System.out.print("Please enter an coordinates: ");
         Scanner input = new Scanner(System.in);
         String userInput = input.nextLine();
         return userInput;
@@ -30,23 +30,21 @@ public class Input {
         return true;
     }
 
-    public static ArrayList getCoordinatesFromInput() {
-        ArrayList<Integer> coordinatesList = new ArrayList();
+    public int[] getCoordinatesFromInput() {
+        int[] coordinatesList = new int[2];
         String userInput = getUserInput();
-            while (true) {
-            if (validateInput(userInput)) {
-                break;
-            }
-            System.out.println("Please enter correct coordinates.");
-            userInput = getUserInput();
-        }
         int letterIndex = userInput.length() - 1;
         int xCoordinate = Integer.parseInt(userInput.substring(0, letterIndex)) - 1;
         int yCoordinate = userInput.charAt(letterIndex) - 'a';
-        coordinatesList.add(xCoordinate);
-        coordinatesList.add(yCoordinate);
+        if (xCoordinate < 15 && xCoordinate >= 0 && yCoordinate < 15 && yCoordinate >= 0) {
+            coordinatesList[0] = xCoordinate;
+            coordinatesList[1] = yCoordinate;
 
 
+        } else {
+            display.alertPleaseGiveCorrectCoordinates();
+            coordinatesList = getCoordinatesFromInput();
+        }
         return coordinatesList;
     }
 }

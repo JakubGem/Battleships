@@ -6,6 +6,9 @@ public class Board {
 
     public List<List<Square>> ocean = new ArrayList<>();
 
+//    private static boolean isPlacementOk(int[] placement) {
+//        return ((0 <= placement[0]) && (placement[0] <= 14) && (0 <= placement[1]) && (placement[1] <= 14));
+//    }
 
     public Board(List<List<Square>> ocean) {
         for (int j = 0; j < 15; j++) {
