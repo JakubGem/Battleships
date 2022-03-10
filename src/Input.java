@@ -30,8 +30,8 @@ public class Input {
         return true;
     }
 
-    public static List getCoordinatesFromInput() {
-        ArrayList coordinatesList = new ArrayList();
+    public static ArrayList getCoordinatesFromInput() {
+        ArrayList<Integer> coordinatesList = new ArrayList();
         String userInput = getUserInput();
             while (true) {
             if (validateInput(userInput)) {
@@ -45,7 +45,7 @@ public class Input {
         int yCoordinate = userInput.charAt(letterIndex) - 'a';
         coordinatesList.add(xCoordinate);
         coordinatesList.add(yCoordinate);
-        System.out.println(yCoordinate);
+
 
         return coordinatesList;
     }

@@ -21,6 +21,15 @@ public class Player {
 
     }
 
+    public static boolean canShoot(List<Integer> shootingCoordinates, List<List<Square>> board){
+        int coordinateX = shootingCoordinates.get(0);
+        int coordinateY = shootingCoordinates.get(1);
+        if (board.get(coordinateX).get(coordinateY).getStatusSquare() == SquareStatus.status.MISS || board.get(coordinateX).get(coordinateY).getStatusSquare() == SquareStatus.status.HIT){
+            return false;
+        }
+        return true;
+    }
+
     public static boolean isAlive(List<List<Square>> board){
     for(List<Square> list : board) {
         for(Square object : list){
