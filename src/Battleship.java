@@ -2,7 +2,10 @@ public class Battleship {
     public static void main(String[] args) {
         Display display = new Display();
         Board board = new Board();
-        BoardFactory.randomPlacement(board);
+        Board.carrierPlacement(board);
+        Board.battleshipPlacement(board);
+        Board.CruiserPlacement(board);
+        Board.SubmarinePlacement(board);
         display.displayBoard(board);
 
     }
