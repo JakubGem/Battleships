@@ -29,8 +29,6 @@ public class BoardFactory {
         Random rand = new Random();
         int randomX = rand.nextInt(1, 15);
         int randomY = rand.nextInt(1, 15);
-        System.out.println(randomX);
-        System.out.println(randomY);
         return new int[]{randomX - 1, randomY - 1};
     }
 
