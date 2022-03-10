@@ -26,15 +26,29 @@ public class Board {
         try {
             if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1] + 1).getStatusSquare().equals("O")
                     && board.ocean.get(result[0]).get(result[1] + 2).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1] + 3).getStatusSquare().equals("O")
-                    && board.ocean.get(result[0]).get(result[1] + 4).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1] + 5).getStatusSquare().equals("O")
-                    && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O")) {
-                System.out.println("pośła posiomo piąteczka");
+                    && board.ocean.get(result[0]).get(result[1] + 4).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1]-1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0]).get(result[1]+5).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 1).get(result[1]+2).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+3).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 1).get(result[1]+4).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0] - 1).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] - 1).get(result[1]+1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] - 1).get(result[1]+2).getStatusSquare().equals("O") && board.ocean.get(result[0] - 1).get(result[1]+3).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] - 1).get(result[1]+4).getStatusSquare().equals("O")) {
                 BoardFactory.randomPlacement(board, 5, 1, result);
-            } else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O")
+            }  else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O")
                     && board.ocean.get(result[0] + 2).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 3).get(result[1]).getStatusSquare().equals("O")
-                    && board.ocean.get(result[0] + 4).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 5).get(result[1]).getStatusSquare().equals("O")
-                    && board.ocean.get(result[0]).get(result[1] + 1).getStatusSquare().equals("O")) {
-                System.out.println("pośła pionowo piąteczka");
+                    && board.ocean.get(result[0] + 4).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]+5).get(result[1]).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0]-1).get(result[1]).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0]).get(result[1]+1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 2).get(result[1]+1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 3).get(result[1]+1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 4).get(result[1]+1).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0]).get(result[1]-1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]-1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 2).get(result[1]-1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 3).get(result[1]-1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 4).get(result[1]-1).getStatusSquare().equals("O")) {
                 BoardFactory.randomPlacement(board, 5, 2, result);
             } else {
                 carrierPlacement(board);
@@ -50,13 +64,23 @@ public class Board {
         try {
             if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1] + 1).getStatusSquare().equals("O")
                     && board.ocean.get(result[0]).get(result[1] + 2).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1] + 3).getStatusSquare().equals("O")
-                    && board.ocean.get(result[0]).get(result[1] + 4).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O")) {
-                System.out.println("pośła posiomo czwóreczka");
+                    && board.ocean.get(result[0]).get(result[1] + 4).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1]-1).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 1).get(result[1]+2).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+3).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0] - 1).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] - 1).get(result[1]+1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] - 1).get(result[1]+2).getStatusSquare().equals("O") && board.ocean.get(result[0] - 1).get(result[1]+3).getStatusSquare().equals("O")) {
                 BoardFactory.randomPlacement(board, 4, 1, result);
             } else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O")
                     && board.ocean.get(result[0] + 2).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 3).get(result[1]).getStatusSquare().equals("O")
-                    && board.ocean.get(result[0] + 4).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1] + 1).getStatusSquare().equals("O")) {
-                System.out.println("pośła pionowo czwóreczka");
+                    && board.ocean.get(result[0] + 4).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]-1).get(result[1]).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0]).get(result[1]+1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 2).get(result[1]+1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 3).get(result[1]+1).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0]).get(result[1]-1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]-1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 2).get(result[1]-1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 3).get(result[1]-1).getStatusSquare().equals("O")) {
                 BoardFactory.randomPlacement(board, 4, 2, result);
             } else {
                 battleshipPlacement(board);
@@ -72,13 +96,23 @@ public class Board {
         try {
             if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1] + 1).getStatusSquare().equals("O")
                     && board.ocean.get(result[0]).get(result[1] + 2).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1] + 3).getStatusSquare().equals("O")
-                    && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O")) {
-                System.out.println("pośła posiomo trójeczka");
+                     && board.ocean.get(result[0]).get(result[1]-1).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 1).get(result[1]+2).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0] - 1).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] - 1).get(result[1]+1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] - 1).get(result[1]+2).getStatusSquare().equals("O")) {
                 BoardFactory.randomPlacement(board, 3, 1, result);
             } else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O")
                     && board.ocean.get(result[0] + 2).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 3).get(result[1]).getStatusSquare().equals("O")
-                    && board.ocean.get(result[0]).get(result[1] + 1).getStatusSquare().equals("O")) {
-                System.out.println("pośła pionowo trójeczka");
+                    && board.ocean.get(result[0]-1).get(result[1]).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0]).get(result[1]+1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 2).get(result[1]+1).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0]).get(result[1]-1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]-1).getStatusSquare().equals("O")
+                    && board.ocean.get(result[0] + 2).get(result[1]-1).getStatusSquare().equals("O")) {
                 BoardFactory.randomPlacement(board, 3, 2, result);
             } else {
                 CruiserPlacement(board);
@@ -93,14 +127,18 @@ public class Board {
         int[] result = BoardFactory.random();
         try {
             if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1] + 1).getStatusSquare().equals("O")
-                    && board.ocean.get(result[0]).get(result[1] + 2).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O")
-            ) {
-                System.out.println("pośła posiomo dwójeczka");
+                    && board.ocean.get(result[0]).get(result[1] + 2).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1]-1).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+1).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0] - 1).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] - 1).get(result[1]+1).getStatusSquare().equals("O")) {
                 BoardFactory.randomPlacement(board, 2, 1, result);
             } else if (board.ocean.get(result[0]).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]).getStatusSquare().equals("O")
-                    && board.ocean.get(result[0] + 2).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]).get(result[1] + 1).getStatusSquare().equals("O")
-            ) {
-                System.out.println("pośła pionowo dwójeczka");
+                    && board.ocean.get(result[0] + 2).get(result[1]).getStatusSquare().equals("O") && board.ocean.get(result[0]-1).get(result[1]).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0]).get(result[1]+1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]+1).getStatusSquare().equals("O")
+
+                    && board.ocean.get(result[0]).get(result[1]-1).getStatusSquare().equals("O") && board.ocean.get(result[0] + 1).get(result[1]-1).getStatusSquare().equals("O")) {
                 BoardFactory.randomPlacement(board, 2, 2, result);
             } else {
                 SubmarinePlacement(board);
