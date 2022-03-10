@@ -3,8 +3,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Game {
-    public boolean gameOver;
-    public String[] gameModes;
     public static Board playerOne;
     public static Board playerTwo;
     public static final List<List<Square>> firstPlayerOcean = new ArrayList<>();
@@ -30,8 +28,7 @@ public class Game {
         } else {
             display.alertPleaseGiveCorrectNumber();
         }
-        setBoards(manual); //todo replace when manual placement ready, line 73
-
+        setBoards(manual);
 
         while (!isGameOver()) {
             if (currentPlayer == 1) {

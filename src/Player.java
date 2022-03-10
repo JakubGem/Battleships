@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
+    static Display display = new Display();
     public static boolean handleShots(int[] shootingCoordinates, List<List<Square>> board) {
         Display display = new Display();
         int coordinateX = shootingCoordinates[0];
@@ -104,6 +105,7 @@ public class Player {
                                 board.get(newRow).get(newCol).setStatusSquare(SquareStatus.status.DESTROYED);
                             }
                         }
+                        display.alertDestroyed();
                     }
                 }
             }

@@ -6,8 +6,4 @@ public class Battleship {
         Game game = new Game();
         game.playGame();
     }
-
-    public void displayMenu(){
-
-    }
 }

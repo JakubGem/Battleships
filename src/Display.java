@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.ArrayList;
 
 public class Display {
 
@@ -20,22 +19,6 @@ public class Display {
         System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " Placement: " + AnsiColors.ANSI_RESET);
     }
 
-
-    public void chooseDifficultyLevel() {
-        System.out.println();
-        System.out.println();
-        System.out.println("                                                            " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "========================================================" + AnsiColors.ANSI_RESET);
-        System.out.println("                                                            " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET + AnsiColors.ANSI_BLACK_BACKGROUND + "                               " + AnsiColors.ANSI_YELLOW + "*                    " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET);
-        System.out.println("                                                            " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET + AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + "            " + AnsiColors.ANSI_YELLOW + "*" + AnsiColors.ANSI_CYAN + "          Choose                       " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET);
-        System.out.println("                                                            " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET + AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + "                                            " + AnsiColors.ANSI_YELLOW + "*" + AnsiColors.ANSI_PURPLE + "       " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET);
-        System.out.println("                                                            " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET + AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + "                  1. Normal mode                    " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET);
-        System.out.println("                                                            " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET + AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + "           " + AnsiColors.ANSI_YELLOW + "*" + AnsiColors.ANSI_PURPLE + "      2. Unusual mode                   " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET);
-        System.out.println("                                                            " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET + AnsiColors.ANSI_BLACK_BACKGROUND + "                                                    " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "||" + AnsiColors.ANSI_RESET);
-        System.out.println("                                                            " + AnsiColors.ANSI_YELLOW_BACKGROUND + AnsiColors.ANSI_BLACK + "========================================================" + AnsiColors.ANSI_RESET);
-        System.out.println();
-        System.out.println();
-        System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " Mode: " + AnsiColors.ANSI_RESET);
-    }
 
 
     public void manualPlacementOfAllFiveKindOfShips() {
@@ -73,7 +56,6 @@ public class Display {
 
     }
 
-    Square square;
 
     public void alertPleaseGiveCorrectNumber() {
         System.out.println();
@@ -88,11 +70,7 @@ public class Display {
         System.out.println();
         System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " Give the coordinates for inserting the ship \"CARRIER\" (5 holes): " + AnsiColors.ANSI_RESET);
     }
-    public  void howDoYouWantToPositionTheShips() {
-        System.out.println();
-        System.out.println();
-        System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " How do you want to position the ships? (1->manual / 2->random) : " + AnsiColors.ANSI_RESET);
-    }
+
 
     public void manualPlacement4HolesShips() {
         System.out.println();
@@ -112,11 +90,6 @@ public class Display {
         System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " Give the coordinates for inserting the ship \"SUBMARINE\" (2 holes): " + AnsiColors.ANSI_RESET);
     }
 
-    public void manualPlacement1HolesShips() {
-        System.out.println();
-        System.out.println();
-        System.out.print(AnsiColors.ANSI_PURPLE + AnsiColors.ANSI_BLACK_BACKGROUND + " Give the coordinates for inserting the ship \"DESTROYER\" (1 holes): " + AnsiColors.ANSI_RESET);
-    }
 
     public void manualGiveCoordinateForShot() {
         System.out.println();
@@ -126,14 +99,6 @@ public class Display {
 
 
     // ALERTY
-    public void alertYouCanntSetAShipHere() {
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.print("                                                                    " + AnsiColors.ANSI_BLACK + AnsiColors.ANSI_RED_BACKGROUND + " You can't set a ship here! " + AnsiColors.ANSI_RESET);
-        System.out.println();
-        System.out.println();
-    }
 
     public void alertPleaseGiveCorrectCoordinates() {
         System.out.println();
@@ -192,15 +157,6 @@ public class Display {
         System.out.println();
         System.out.println();
         System.out.print("                                                                            " + AnsiColors.ANSI_BLACK + AnsiColors.ANSI_GREEN_BACKGROUND + " Destroyed!!! " + AnsiColors.ANSI_RESET);
-        System.out.println();
-        System.out.println();
-    }
-
-    public void alertPlaceIsAlreadyTaken() {
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.print("                                                            " + AnsiColors.ANSI_BLACK + AnsiColors.ANSI_RED_BACKGROUND + " This place is already taken by another ship! " + AnsiColors.ANSI_RESET);
         System.out.println();
         System.out.println();
     }

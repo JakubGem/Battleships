@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.Random;
 
 public class BoardFactory {
@@ -34,9 +33,4 @@ public class BoardFactory {
         int randomY = rand.nextInt(1, 15);
         return new int[]{randomX - 1, randomY - 1};
     }
-
-    public static void manualPlacement() {
-
-    }
-
 }

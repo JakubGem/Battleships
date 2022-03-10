@@ -38,16 +38,8 @@ public class Square {
     }
 
 
-    public static int[][] getPos(){
-        return null;
-    }
-
     public String getSquareStatus(){
         return(SquareStatus.getCharacter(statusSquare));
-    }
-
-    public void setSquareStatus(SquareStatus.status status) {
-        statusSquare = status;
     }
 
     @Override
