@@ -180,6 +180,28 @@ public class Display {
         System.out.println();
     }
 
+    public static void printShip(){
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("                                                                                 |"+ AnsiColors.ANSI_BLUE + "▌▌▌▌▌\n" + AnsiColors.ANSI_RESET +
+                           "                                                                                 |"+ AnsiColors.ANSI_YELLOW + "▌▌▌▌▌\n" + AnsiColors.ANSI_RESET +
+                           "                                                                                 |\n" +
+                           "                                                                                 |\\/\n" +
+                           "                                                                                   ---\n" +
+                           "                                                                                 / | [\n" +
+                           "                                                                          !      | |||\n" +
+                           "                                                                        _/|     _/|-++'\n" +
+                           "                                                                    +  +--|    |--|--|_ |-\n" +
+                           "                                                                 { /|__|  |/\\__|  |--- |||__/\n" +
+                           "                                                                +---------------___[}-_===_.'____                 /\\\n" +
+                           "                                                            ____`-' ||___-{]_| _[}-  |     |_[___\\==--            \\/   _\n" +
+                           "                                             __..._____--==/___]_|__|_____________________________[___\\==--____,------' .7\n" +
+                           "                                            |              "+ AnsiColors.ANSI_BLACK + AnsiColors.ANSI_RED_BACKGROUND +" Ruski wojenny korabl, idi nachuj " + AnsiColors.ANSI_RESET + "                    BB-61/\n" +
+                           "                                             \\_________________________________________________________________________|\n"
+                 );
+    }
+
 
     public void displayBoard(List<List<Square>> myBoard, List<List<Square>> opponentBoard) {
         System.out.println();
