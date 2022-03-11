@@ -30,19 +30,24 @@ public class Game {
         }
         setBoards(manual);
 
-        while (!isGameOver()) {
+        while (!isGameOverNoPrint()) {
             if (currentPlayer == 1) {
                 while(makeMove(playerOne, playerTwo, "One")){
-                    continue;
+                    if (isGameOverNoPrint()) {
+                        break;
+                    }
                 }
                 currentPlayer = 2;
             } else {
                 while(makeMove(playerTwo, playerOne, "Two")){
-                    continue;
+                    if (isGameOverNoPrint()) {
+                        break;
+                    }
                 }
                 currentPlayer = 1;
             }
         }
+        isGameOver();
     }
 
 
@@ -65,12 +70,23 @@ public class Game {
         }
     }
 
+    private boolean isGameOverNoPrint() {
+        if (!Player.isAlive(playerOne.ocean)) {
+            return true;
+        } else if (!Player.isAlive(playerTwo.ocean)) {
+            return true;
+        }
+        return false;
+    }
+
     private boolean isGameOver(){
         Display display = new Display();
         if (!Player.isAlive(playerOne.ocean)) {
+            display.displayBoard(playerTwo.ocean, playerOne.ocean);
             display.alertWinner("Two");
             return true;
         } else if (!Player.isAlive(playerTwo.ocean)) {
+            display.displayBoard(playerOne.ocean, playerTwo.ocean);
             display.alertWinner("One");
             return true;
         }

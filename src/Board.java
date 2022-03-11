@@ -21,7 +21,7 @@ public class Board {
 
 
     public static void informationToValidate(Board board) {
-        int[] ships = {5, 4, 4, 3, 3, 3, 2, 2, 2};
+        int[] ships = {5};
         for (int length : ships) {
             boolean check = false;
             while (!check) {
