@@ -1,24 +1,34 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Game {
-    public boolean gameOver;
-    public String[] gameModes;
-    private static Board playerOne;
-    private static Board playerTwo;
-    private static final List<List<Square>> firstPlayerOcean = new ArrayList<>();
-    private static final List<List<Square>> secondPlayerOcean = new ArrayList<>();
+    public static Board playerOne;
+    public static Board playerTwo;
+    public static final List<List<Square>> firstPlayerOcean = new ArrayList<>();
+    public static final List<List<Square>> secondPlayerOcean = new ArrayList<>();
     Input input = new Input();
+    Scanner scanner = new Scanner(System.in);
+    int currentPlayer = 1;
     //Player: isAlive, canShoot, handleShots
 
 
     public void playGame() {
+        playerOne = new Board(firstPlayerOcean);
+        playerTwo = new Board(secondPlayerOcean);
         Display display = new Display();
-        setBoards(false); //todo replace when manual placement ready, line 73
-        int currentPlayer = 1;
-
-        Board.informationToValidate(playerOne);
-        Board.informationToValidate(playerTwo);
+        display.chooseMethodOfStagingShips();
+        boolean manual = false;
+        if(scanner.hasNextInt()) {
+            int userInput = scanner.nextInt();
+            switch (userInput){
+                case 1 -> manual = true;
+                case 2 -> manual = false;
+            }
+        } else {
+            display.alertPleaseGiveCorrectNumber();
+        }
+        setBoards(manual);
 
         while (!isGameOver()) {
             if (currentPlayer == 1) {
@@ -69,10 +79,11 @@ public class Game {
 
     private void setBoards(boolean manual) {
         if (!manual) {
-            playerOne = new Board(firstPlayerOcean);
-            playerTwo = new Board(secondPlayerOcean);
+            Board.informationToValidate(playerOne);
+            Board.informationToValidate(playerTwo);
         } else {
-            //todo manual placement
+            Board.informationToValidateManual(playerOne, playerTwo);
+            Board.informationToValidateManual(playerTwo, playerOne);
         }
     }
 }

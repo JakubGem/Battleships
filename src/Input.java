@@ -1,7 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Input {
@@ -12,22 +8,6 @@ public class Input {
         String userInput = input.nextLine();
         return userInput;
 
-    }
-
-    public static Boolean validateInput(String input) {
-        int letterIndex = input.length() - 1;
-        int letterCoordinate = input.charAt(letterIndex) - 'a';
-        if (letterCoordinate < 0) {
-            return false;
-        }
-
-        try {
-            Integer.parseInt(input.substring(0, letterIndex));
-        } catch (NumberFormatException exception) {
-            return false;
-        }
-
-        return true;
     }
 
     public int[] getCoordinatesFromInput() {

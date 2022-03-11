@@ -18,9 +18,11 @@ public class BoardFactory {
             if (way == 1) {
                 board.ocean.get(result[0]).get(result[1] + i).setStatusSquare(SquareStatus.status.SHIP);
                 board.ocean.get(result[0]).get(result[1] + i).setObjectName(shipName);
+                board.ocean.get(result[0]).get(result[1] + i).setObjectWay(way);
             } else if (way == 2) {
                 board.ocean.get(result[0] + i).get(result[1]).setStatusSquare(SquareStatus.status.SHIP);
                 board.ocean.get(result[0] + i).get(result[1]).setObjectName(shipName);
+                board.ocean.get(result[0]).get(result[1] + i).setObjectWay(way);
             }
         }
     }
@@ -31,9 +33,4 @@ public class BoardFactory {
         int randomY = rand.nextInt(1, 15);
         return new int[]{randomX - 1, randomY - 1};
     }
-
-    public static void manualPlacement() {
-
-    }
-
 }
