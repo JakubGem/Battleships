@@ -14,4 +14,13 @@ Backend technologies:
 
 - Java 17
 
+
+## Developers team
+
+* [Jakub Gembicki](https://github.com/FilipKoniuszewski)
+* [Vladyslav Shyian](https://github.com/mrshyian)
+* [Michal Rogalski](https://github.com/MichalRogalski22)
+* [Krzysztof Kowalczyk](https://github.com/dagggy)
+
+
 ![image](https://user-images.githubusercontent.com/89380131/165106633-4e181bdb-d264-4087-8e82-1023bdb1487a.png)
