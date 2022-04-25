@@ -4,7 +4,7 @@
 This game is based on a popular and knowns battleship game, that most of us remember from ours childhood.
 Digital version is a loyal representation of the paper one, also rules, the course of the game and fun are the same.
 
-##Rules
+## Rules
 Each ship must be placed horizontally or vertically across grid spaces not diagonally and the ships can't hang off the grid.
 Ships can touch each other, but they can't occupy the same grid space. You cannot change the position of the ships after the game begins.
 
