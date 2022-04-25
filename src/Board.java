@@ -110,10 +110,7 @@ public class Board {
         }
     }
 
-    // random or manual placement?
-    //normal or unusual game mode?
-    // input coordinates (one per ship)
-    // what kind of placement (vertical/horizontal)
+
     public static boolean isPlacementOk(int shipLength, int direction, Board board, int[] result) {
         int coordinateX = result[0];
         int coordinateY = result[1];
