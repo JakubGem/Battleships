@@ -17,7 +17,7 @@ Backend technologies:
 
 ## Developers team
 
-* [Jakub Gembicki](https://github.com/FilipKoniuszewski)
+* [Jakub Gembicki](https://github.com/JakubGem)
 * [Vladyslav Shyian](https://github.com/mrshyian)
 * [Michal Rogalski](https://github.com/MichalRogalski22)
 * [Krzysztof Kowalczyk](https://github.com/dagggy)
